@@ -6,6 +6,7 @@ import com.xuecheng.framework.domain.cms.response.CmsPageResult;
 import com.xuecheng.framework.model.response.CommonCode;
 import com.xuecheng.framework.model.response.QueryResponseResult;
 import com.xuecheng.framework.model.response.QueryResult;
+import com.xuecheng.framework.model.response.ResponseResult;
 import com.xuecheng.manage_cms.dao.CmsPageRepository;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -82,6 +83,19 @@ public class PageService {
         return new CmsPageResult(CommonCode.FAIL,null);
     }
 
+    /**
+     * 删除页面
+     * @param id 页面id
+     * @return springData ResponseResult
+     */
+    public ResponseResult del(String id){
+        CmsPage page = findById(id);
+        if (page != null) {
+            pageRepository.deleteById(id);
+            return new ResponseResult(CommonCode.SUCCESS);
+        }
+        return new ResponseResult(CommonCode.FAIL);
+    }
     /**
      * 根据id 查找
      * @param id 页面id

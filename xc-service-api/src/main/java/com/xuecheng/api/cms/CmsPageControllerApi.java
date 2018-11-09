@@ -4,6 +4,7 @@ import com.xuecheng.framework.domain.cms.CmsPage;
 import com.xuecheng.framework.domain.cms.request.QueryPageRequest;
 import com.xuecheng.framework.domain.cms.response.CmsPageResult;
 import com.xuecheng.framework.model.response.QueryResponseResult;
+import com.xuecheng.framework.model.response.ResponseResult;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -30,6 +31,14 @@ public interface CmsPageControllerApi {
      */
     @ApiOperation("添加页面")
     CmsPageResult add(CmsPage cmsPage);
+
+    /**
+     * 删除页面
+     * @param id 页面id
+     * @return springData ResponseResult
+     */
+    @ApiOperation("删除页面")
+    ResponseResult del(String id);
 
     /**
      * 根据id 查询页面
