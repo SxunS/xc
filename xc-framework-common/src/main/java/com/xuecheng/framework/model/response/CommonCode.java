@@ -23,8 +23,10 @@ public enum CommonCode implements ResultCode{
     CMS_GENERATE_MODELISNULL(false,10101,"page页面模型为空"),
     CMS_GENERATE_DATAISNULL(false,10102,"page模型数据为空"),
     CMS_GENERATE_HTMLISNULL(false,10103,"page页面为空"),
-    CMS_GENERATE_PAGE_NOT_EXIST(false,10104,"page不存在");
+    CMS_GENERATE_PAGE_NOT_EXIST(false,10104,"page不存在"),
 //    private static ImmutableMap<Integer, CommonCode> codes ;
+    //cms site 站点
+    CMS_SITE_NOT_EXIST(false,10201,"site站点不存在");
     //操作是否成功
     boolean success;
     //操作代码
