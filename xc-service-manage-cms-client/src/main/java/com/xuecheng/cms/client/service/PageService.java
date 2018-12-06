@@ -70,7 +70,7 @@ public class PageService {
                     e.printStackTrace();
                 }
             }
-            if (is == null) {
+            if (is != null) {
                 try {
                     is.close();
                 } catch (IOException e) {
@@ -78,6 +78,11 @@ public class PageService {
                 }
             }
         }
+    }
+
+    public CmsPage findById(String id){
+        Optional<CmsPage> byId = pageRepository.findById(id);
+        return byId.orElse(null);
     }
 
     private InputStream getFileById(String htmlFileId) {
